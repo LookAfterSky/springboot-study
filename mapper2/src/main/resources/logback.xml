@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <!-- appender 的 class 中指定输入位置 -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- layout 的 class 中指定输出样式 -->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>[%p] [%d{yyyy-MM-dd HH:mm:ss}] %m %n</pattern>
+        </layout>
+    </appender><!-- 根日志 使用level设定根日志等级-->
+    <root level="warn">
+        <appender-ref ref="stdout"/>
+    </root>
+    <!-- 子日志 使用level设定子日志等级 name设定子日志位置-->
+    <logger name="com.baizhi.dao" level="DEBUG"/>
+</configuration>

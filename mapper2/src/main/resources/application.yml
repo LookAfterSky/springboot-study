@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    username: vsinger
+    password: vsinger
+    url: jdbc:mysql://localhost:3306/vsinger?serverTimezone=GMT&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    cluster:
+      nodes:
+        - 192.168.127.134:8001
+        - 192.168.127.134:8002
+        - 192.168.127.134:8003
+        - 192.168.127.134:8004
+        - 192.168.127.134:8005
+        - 192.168.127.134:8006
+      max-redirects: 3
+    database: 1
+    lettuce:
+      pool:
+        max-idle: 10
+        max-wait: 6000
+        min-idle: 5
+        max-active: 10
+server:
+  port: 8989
